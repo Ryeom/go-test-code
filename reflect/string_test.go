@@ -79,6 +79,7 @@ func getValue(v reflect.Value) string {
 	case reflect.Array:
 
 	}
+	return ""
 }
 
 func main() {

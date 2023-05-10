@@ -3,6 +3,7 @@ package test
 import (
 	"fmt"
 	"regexp"
+	"strings"
 	"testing"
 )
 
@@ -20,4 +21,17 @@ func TestRegexp(t *testing.T) {
 	//regexp.MustCompile()
 	//str := "김안녕(wnthfkdnr__23432501)"
 
+}
+
+func TestRegexp1(t *testing.T) {
+	any := "[a-zA-Z0-9-_/]+"
+	url := "path/*/asdf/*/"
+	realUrlRegexp := strings.ReplaceAll(url, "*", any)
+	matched, _ := regexp.MatchString(realUrlRegexp, "path/Arr_zaDA23-4/asdf/a-sAZVBdf_/")
+	fmt.Println(matched)
+
+	url = "*/list/backup/*"
+	realUrlRegexp = strings.ReplaceAll(url, "*", any)
+	matched, _ = regexp.MatchString(realUrlRegexp, "oauth/token/list/backup/create")
+	fmt.Println(matched)
 }
