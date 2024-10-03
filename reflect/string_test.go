@@ -20,6 +20,11 @@ type User struct {
 	Active   bool
 }
 
+func (u *User) IsActive() (bool, error) {
+
+	return true, nil
+
+}
 func structToJson(s interface{}) (string, error) {
 	// reflect 패키지로 입력 구조체의 타입 정보를 가져옴
 	t := reflect.TypeOf(s)

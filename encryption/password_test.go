@@ -53,6 +53,5 @@ func DecryptPassword(key, data []byte) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return plaintext, nil
 }
